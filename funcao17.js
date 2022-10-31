@@ -2,6 +2,7 @@ var nome
 var salario
 var aumento
 porcentagemAumento 
+var CalcularNovamente
 function CadastrarUsuario() {
      nome = prompt("Insira seu nome")
      salario = prompt("Insira seu salario")
@@ -25,4 +26,17 @@ function CalcularAumento(salario, aumento) {
      return salarioAumentado
 }
 
-console.log("Seu nome é ", nome, " seu salario é ", salario, " você receberá ", porcentagemAumento, " de aumento e seu salário reajustado será de: ", CalcularAumento(salario, aumento) )
+
+function CalcularNovamente() {
+     var CalcularNovamente = prompt("Deseja calcular novamente? s ou n?")
+     return CalcularNovamente
+}
+
+while(CalcularNovamente == "s"){
+     CadastrarUsuario()
+     CalcularAumento(salario, aumento)
+     console.log("Seu nome é ", nome, " seu salario é ", salario, " você receberá ", porcentagemAumento, " de aumento e seu salário reajustado será de: ", CalcularAumento(salario, aumento) )
+     CalcularNovamente()
+}
+
+
